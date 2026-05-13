@@ -3,10 +3,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function bannerStackAnimation() {
-  const section = document.querySelector(".banner-section");
-  const cards = gsap.utils.toArray(".banner-stack-card");
-  const texts = gsap.utils.toArray(".banner-desc-item");
+export function designStackAnimation() {
+  const section = document.querySelector(".design-section");
+  const cards = gsap.utils.toArray(".design-stack-card");
+  const texts = gsap.utils.toArray(".design-desc-item");
 
   if (!section || cards.length < 3 || texts.length < 3) return;
 
@@ -25,17 +25,9 @@ export function bannerStackAnimation() {
     x: 0,
   });
 
-  gsap.set(cards[0], {
-    zIndex: 3,
-  });
-
-  gsap.set(cards[1], {
-    zIndex: 2,
-  });
-
-  gsap.set(cards[2], {
-    zIndex: 1,
-  });
+  gsap.set(cards[0], { zIndex: 3 });
+  gsap.set(cards[1], { zIndex: 2 });
+  gsap.set(cards[2], { zIndex: 1 });
 
   gsap.set(texts, {
     opacity: 0,
@@ -59,7 +51,6 @@ export function bannerStackAnimation() {
     },
   });
 
-  // 1. 아래에서 카드 3장 올라오기
   tl.to(cards, {
     opacity: 1,
     y: 0,
@@ -68,14 +59,12 @@ export function bannerStackAnimation() {
     ease: "power3.out",
   });
 
-  // 2. 세 장이 카드 영역 안에서만 오른쪽으로 살짝 모이기
   tl.to(cards, {
     x: 80,
     duration: 0.7,
     ease: "none",
   });
 
-  // 3. B가 A 위로 올라오기
   tl.to(cards[1], {
     x: 40,
     y: -16,
@@ -104,7 +93,6 @@ export function bannerStackAnimation() {
     "<0.15",
   );
 
-  // 4. C가 B 위로 올라오기
   tl.to(cards[2], {
     x: 0,
     y: -32,

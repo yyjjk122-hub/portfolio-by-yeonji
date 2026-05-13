@@ -12,11 +12,13 @@ function Header() {
           <li>
             <button onClick={() => moveToSection("#about")}>ABOUT</button>
           </li>
+
           <li>
             <button onClick={() => moveToSection("#work")}>WORKS</button>
           </li>
+
           <li>
-            <button onClick={() => moveToSection("#contact")}>CONTACT</button>
+            <button onClick={() => moveToSection("#design")}>DESIGN</button>
           </li>
         </ul>
       </nav>

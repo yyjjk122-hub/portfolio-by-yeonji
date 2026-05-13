@@ -12,8 +12,7 @@ import "./styles/sidebar.css";
 import "./styles/hero.css";
 import "./styles/workSection.css";
 import "./styles/videoSection.css";
-import "./styles/bannerSection.css";
-import "./styles/illustrationSection.css";
+import "./styles/designSection.css";
 import "./styles/aboutSection.css";
 import "./styles/bottomBar.css";
 

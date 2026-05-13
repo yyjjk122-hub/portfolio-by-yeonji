@@ -15,34 +15,42 @@ function Sidebar() {
 
       <nav className="side-nav">
         <p>NAVIGATION</p>
+
         <ul>
           <li>
             <button onClick={() => moveToSection("#work")}>
-              <span>01</span> WEB PROJECT
+              <span>01</span>
+              WEB PROJECT
             </button>
           </li>
+
           <li>
             <button onClick={() => moveToSection("#video")}>
-              <span>02</span> VIDEO
+              <span>02</span>
+              VIDEO ARCHIVE
             </button>
           </li>
+
           <li>
-            <button onClick={() => moveToSection("#banner")}>
-              <span>03</span> BANNER
+            <button onClick={() => moveToSection("#design")}>
+              <span>03</span>
+              DESIGN ARCHIVE
             </button>
           </li>
-          <li>
-            <button onClick={() => moveToSection("#illustration")}>
-              <span>04</span> ILLUSTRATION
-            </button>
-          </li>
+
           <li>
             <button onClick={() => moveToSection("#about")}>
-              <span>05</span> ABOUT ME
+              <span>04</span>
+              ABOUT ME
             </button>
           </li>
         </ul>
       </nav>
+
+      <div className="interface-mode">
+        <span>INTERFACE MODE</span>
+        <strong>ACTIVE ●</strong>
+      </div>
     </aside>
   );
 }

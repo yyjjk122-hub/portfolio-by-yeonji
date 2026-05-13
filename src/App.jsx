@@ -4,13 +4,15 @@ import IntroPortal from "./components/IntroPortal";
 import Hero from "./components/Hero";
 import WorkSection from "./components/WorkSection";
 import VideoSection from "./components/VideoSection";
-import BannerSection from "./components/BannerSection";
-import IllustrationSection from "./components/IllustrationSection";
+import DesignSection from "./components/DesignSection";
 import AboutSection from "./components/AboutSection";
 import BottomBar from "./components/BottomBar";
+
 import useLenis from "./hooks/useLenis";
+
 function App() {
   useLenis();
+
   return (
     <div className="portfolio">
       <Sidebar />
@@ -21,8 +23,7 @@ function App() {
         <Hero />
         <WorkSection />
         <VideoSection />
-        <BannerSection />
-        <IllustrationSection />
+        <DesignSection />
         <AboutSection />
       </main>
 
