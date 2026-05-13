@@ -1,0 +1,24 @@
+.video-section {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 80px;
+  padding: 70px 8vw;
+  border-bottom: 1px solid #ded8cd;
+}
+
+.video-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.video-card {
+  height: 260px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 12px;
+  background: #d8d3ca;
+  color: #fff;
+  font-weight: 700;
+}

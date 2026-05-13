@@ -1,0 +1,93 @@
+.banner-section {
+  height: 100vh;
+  padding: 80px 7vw;
+  border-bottom: 1px solid #ded8cd;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 56px;
+  overflow: hidden;
+}
+
+.banner-motion-area {
+  position: relative;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 36% 64%;
+  gap: 80px;
+  align-items: center;
+}
+
+.banner-stack {
+  position: relative;
+  width: 360px;
+  height: 400px;
+}
+
+.banner-stack-card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 360px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #eee9e2;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+}
+
+.banner-stack-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-a {
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.card-b {
+  left: 34px;
+  top: 34px;
+  z-index: 2;
+}
+
+.card-c {
+  left: 68px;
+  top: 68px;
+  z-index: 1;
+}
+
+.banner-desc {
+  position: relative;
+  min-height: 320px;
+  padding-left: 40px;
+}
+
+.banner-desc-item {
+  position: absolute;
+  left: 40px;
+  top: 0;
+  max-width: 560px;
+}
+
+.banner-desc-item span {
+  color: #8aad22;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.banner-desc-item h3 {
+  margin-top: 24px;
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.banner-desc-item p {
+  margin-top: 30px;
+  color: #555;
+  font-size: 18px;
+  line-height: 1.7;
+}

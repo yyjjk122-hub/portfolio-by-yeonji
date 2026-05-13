@@ -1,0 +1,72 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  padding: 56px 48px;
+  background: rgba(248, 245, 239, 0.96);
+  border-right: 1px solid #ded8cd;
+  z-index: 100;
+}
+
+.sidebar-logo strong {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.sidebar-logo span {
+  display: block;
+  margin-bottom: 6px;
+  color: #555;
+  font-size: 15px;
+}
+
+.side-nav {
+  margin-top: 140px;
+}
+
+.side-nav p {
+  margin-bottom: 36px;
+  color: #777;
+  font-size: 12px;
+}
+
+.side-nav li {
+  margin-bottom: 44px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+}
+
+.side-nav li span {
+  margin-right: 20px;
+  color: #8aad22;
+}
+.side-nav button {
+  font-weight: 700;
+  color: #111;
+}
+
+.side-nav button span {
+  margin-right: 20px;
+  color: #8aad22;
+}
+
+.interface-mode {
+  position: absolute;
+  left: 48px;
+  bottom: 56px;
+}
+
+.interface-mode span {
+  display: block;
+  margin-bottom: 8px;
+  color: #777;
+  font-size: 11px;
+}
+
+.interface-mode strong {
+  font-size: 13px;
+}

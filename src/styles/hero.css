@@ -1,0 +1,173 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 180px 8vw 100px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 80px;
+  border-bottom: 1px solid #ded8cd;
+  overflow: hidden;
+}
+
+.now-viewing {
+  margin-bottom: 28px;
+  color: #8aad22;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-size: 110px;
+  line-height: 0.95;
+  letter-spacing: -5px;
+}
+
+.hero h2 {
+  margin-top: 32px;
+  font-size: 18px;
+  letter-spacing: 12px;
+}
+
+.hero-desc {
+  margin-top: 44px;
+  color: #333;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yj-logo-wrap {
+  position: relative;
+  width: 520px;
+  height: 360px;
+}
+
+.yj {
+  position: absolute;
+  top: 50%;
+  width: 220px;
+  height: 300px;
+  transform: translateY(-50%);
+}
+
+.y {
+  left: 0;
+}
+
+.j {
+  right: 0;
+}
+
+.yj-block {
+  position: absolute;
+  display: block;
+  width: 42px;
+  height: 150px;
+  background: #111;
+  border-radius: 999px;
+  transform-origin: center;
+}
+
+.y-1 {
+  left: 25px;
+  top: 0;
+  transform: rotate(-35deg);
+}
+
+.y-2 {
+  right: 25px;
+  top: 0;
+  transform: rotate(35deg);
+}
+
+.y-3 {
+  left: 89px;
+  top: 95px;
+  height: 170px;
+}
+
+.y-4 {
+  left: 50px;
+  top: 215px;
+  height: 70px;
+  transform: rotate(70deg);
+}
+
+.y-5 {
+  right: 50px;
+  top: 215px;
+  height: 70px;
+  transform: rotate(-70deg);
+}
+
+.j-1 {
+  right: 30px;
+  top: 0;
+  height: 230px;
+}
+
+.j-2 {
+  right: 82px;
+  top: 0;
+  width: 120px;
+  height: 42px;
+}
+
+.j-3 {
+  left: 45px;
+  bottom: 0;
+  width: 130px;
+  height: 42px;
+}
+
+.j-4 {
+  left: 25px;
+  bottom: 35px;
+  height: 90px;
+  transform: rotate(20deg);
+}
+
+.j-5 {
+  right: 30px;
+  bottom: 20px;
+  height: 80px;
+  transform: rotate(-35deg);
+}
+
+.current-card {
+  position: absolute;
+  left: 48%;
+  bottom: 120px;
+  width: 180px;
+  padding: 32px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.current-card span {
+  color: #8aad22;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.current-card strong {
+  display: block;
+  margin-top: 12px;
+  color: #8aad22;
+  font-size: 56px;
+}
+
+.current-card p {
+  font-weight: 700;
+}
+
+.current-card b {
+  display: block;
+  margin-top: 36px;
+}

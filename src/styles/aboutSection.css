@@ -1,0 +1,31 @@
+.about-section {
+  min-height: 100vh;
+  padding: 160px 8vw;
+  border-bottom: 1px solid #ded8cd;
+  background: #f8f5ef;
+}
+
+.about-inner {
+  max-width: 900px;
+}
+
+.about-inner span {
+  color: #8aad22;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.about-inner h2 {
+  margin-top: 32px;
+  font-size: 64px;
+  line-height: 1.15;
+  letter-spacing: -2px;
+}
+
+.about-inner p {
+  margin-top: 40px;
+  max-width: 620px;
+  color: #555;
+  font-size: 18px;
+  line-height: 1.8;
+}

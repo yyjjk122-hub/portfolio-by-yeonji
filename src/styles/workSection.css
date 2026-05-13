@@ -1,0 +1,36 @@
+.work-section {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 80px;
+  padding: 70px 8vw;
+  border-bottom: 1px solid #ded8cd;
+}
+
+.work-preview {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  grid-template-rows: 1fr 1fr;
+  gap: 24px;
+}
+
+.big-preview {
+  grid-row: 1 / 3;
+  min-height: 320px;
+  border-radius: 12px;
+  background: #e7e1d7;
+}
+
+.small-preview {
+  min-height: 145px;
+  border-radius: 12px;
+  background: #eee9e2;
+}
+
+.big-preview,
+.small-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-weight: 700;
+}
