@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { introPortalAnimation } from "../animations/introPortalAnimation";
 
-function IntroPortal() {
+function IntroPortal({ onEnter }) {
   useEffect(() => {
-    const cleanup = introPortalAnimation();
+    const cleanup = introPortalAnimation(onEnter);
 
     return () => {
       if (cleanup) cleanup();
     };
-  }, []);
+  }, [onEnter]);
 
   return (
     <section className="intro-portal">
@@ -29,10 +29,10 @@ function IntroPortal() {
         <img src="/images/flower.png" alt="" />
       </div>
 
-      <div className="portal-copy">
+      <button className="portal-copy" type="button">
         <p>WEB PUBLISHER PORTFOLIO</p>
-        <span>HOVER TO ENTER</span>
-      </div>
+        <span>CLICK TO ENTER</span>
+      </button>
     </section>
   );
 }

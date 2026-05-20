@@ -15,11 +15,15 @@ import useLenis from "./hooks/useLenis";
 function App() {
   useLenis();
 
+  const [entered, setEntered] = useState(() => {
+    return sessionStorage.getItem("introEntered") === "true";
+  });
+
   const [uiVisible, setUiVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setUiVisible(window.scrollY > window.innerHeight * 0.6);
+      setUiVisible(window.scrollY > window.innerHeight * 0.3);
     };
 
     handleScroll();
@@ -30,6 +34,11 @@ function App() {
     };
   }, []);
 
+  const handleEnter = () => {
+    sessionStorage.setItem("introEntered", "true");
+    setEntered(true);
+  };
+
   return (
     <div className="portfolio">
       <div className={`global-ui ${uiVisible ? "show" : ""}`}>
@@ -39,7 +48,9 @@ function App() {
 
       <main className={`main ${uiVisible ? "with-ui" : "intro-mode"}`}>
         <Header />
-        <IntroPortal />
+
+        {!entered && <IntroPortal onEnter={handleEnter} />}
+
         <Hero />
         <WorkSection />
         <VideoSection />
