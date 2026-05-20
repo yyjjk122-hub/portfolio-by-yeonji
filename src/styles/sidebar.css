@@ -5,7 +5,8 @@
   width: 260px;
   height: 100vh;
   padding: 56px 48px;
-  background: rgba(248, 245, 239, 0.96);
+  background: rgba(248, 247, 245, 0.82);
+  backdrop-filter: blur(18px);
   border-right: 1px solid #ded8cd;
   z-index: 100;
 }
@@ -24,7 +25,7 @@
 }
 
 .side-nav {
-  margin-top: 140px;
+  margin-top: 150px;
 }
 
 .side-nav p {
@@ -40,10 +41,6 @@
   color: #111;
 }
 
-.side-nav li span {
-  margin-right: 20px;
-  color: #8aad22;
-}
 .side-nav button {
   color: #111;
   font-size: 14px;
@@ -71,4 +68,19 @@
 
 .interface-mode strong {
   font-size: 13px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 4px;
+  border-radius: 50%;
+  background: #111;
+
+  transition: background 0.2s ease;
+}
+
+.status-dot.scrolling {
+  background: #ff3b30;
 }

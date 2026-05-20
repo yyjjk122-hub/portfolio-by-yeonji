@@ -1,4 +1,30 @@
+import { useEffect } from "react";
+
 function Sidebar() {
+  useEffect(() => {
+    let scrollTimer;
+
+    const handleScroll = () => {
+      const dot = document.querySelector(".status-dot");
+      if (!dot) return;
+
+      dot.classList.add("scrolling");
+
+      clearTimeout(scrollTimer);
+
+      scrollTimer = setTimeout(() => {
+        dot.classList.remove("scrolling");
+      }, 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(scrollTimer);
+    };
+  }, []);
+
   const moveToSection = (id) => {
     document.querySelector(id)?.scrollIntoView({
       behavior: "smooth",
@@ -49,7 +75,9 @@ function Sidebar() {
 
       <div className="interface-mode">
         <span>INTERFACE MODE</span>
-        <strong>ACTIVE ●</strong>
+        <strong className="interface-status">
+          ACTIVE <span className="status-dot"></span>
+        </strong>
       </div>
     </aside>
   );

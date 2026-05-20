@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import IntroPortal from "./components/IntroPortal";
@@ -13,11 +15,29 @@ import useLenis from "./hooks/useLenis";
 function App() {
   useLenis();
 
+  const [uiVisible, setUiVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setUiVisible(window.scrollY > window.innerHeight * 0.6);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="portfolio">
-      <Sidebar />
+      <div className={`global-ui ${uiVisible ? "show" : ""}`}>
+        <Sidebar />
+        <BottomBar />
+      </div>
 
-      <main className="main">
+      <main className={`main ${uiVisible ? "with-ui" : "intro-mode"}`}>
         <Header />
         <IntroPortal />
         <Hero />
@@ -26,8 +46,6 @@ function App() {
         <DesignSection />
         <AboutSection />
       </main>
-
-      <BottomBar />
     </div>
   );
 }

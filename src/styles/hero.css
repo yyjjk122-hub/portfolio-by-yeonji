@@ -9,13 +9,6 @@
   overflow: hidden;
 }
 
-.now-viewing {
-  margin-bottom: 28px;
-  color: #8aad22;
-  font-size: 13px;
-  font-weight: 700;
-}
-
 .hero h1 {
   font-size: 110px;
   line-height: 0.95;
@@ -35,7 +28,11 @@
   line-height: 1.7;
 }
 
-.hero-visual {
+.view-btn {
+  margin-top: 25px;
+}
+
+/* .hero-visual {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,8 +65,7 @@
   display: block;
   width: 42px;
   height: 150px;
-  background: #111;
-  border-radius: 999px;
+  border-radius: 12px;
   transform-origin: center;
 }
 
@@ -137,37 +133,4 @@
   bottom: 20px;
   height: 80px;
   transform: rotate(-35deg);
-}
-
-.current-card {
-  position: absolute;
-  left: 48%;
-  bottom: 120px;
-  width: 180px;
-  padding: 32px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.current-card span {
-  color: #8aad22;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.current-card strong {
-  display: block;
-  margin-top: 12px;
-  color: #8aad22;
-  font-size: 56px;
-}
-
-.current-card p {
-  font-weight: 700;
-}
-
-.current-card b {
-  display: block;
-  margin-top: 36px;
-}
+} */

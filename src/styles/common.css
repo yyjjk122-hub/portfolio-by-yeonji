@@ -6,8 +6,12 @@
 
 body {
   font-family: "Suit";
-  background: #f8f5ef;
   color: #111;
+  background:
+    radial-gradient(circle at 15% 18%, rgba(255, 205, 230, 0.12), transparent 28%),
+    radial-gradient(circle at 85% 12%, rgba(185, 225, 255, 0.12), transparent 30%),
+    linear-gradient(135deg, #fbf9ff 0%, #f7f9ff 35%, #fff8fb 68%, #f9f8f1 100%);
+  overflow-x: hidden;
 }
 
 ul,
@@ -30,4 +34,111 @@ button {
 img {
   display: block;
   max-width: 100%;
+}
+
+/* common.css */
+
+.project-panel {
+  align-self: start;
+}
+
+.section-num {
+  display: block;
+  margin-bottom: 12px;
+  color: #8aad22;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.project-panel h2 {
+  margin-bottom: 18px;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.project-desc {
+  margin-bottom: 34px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.project-meta {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.project-meta div {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+}
+
+.project-meta span,
+.info-label {
+  color: #999;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.project-meta strong {
+  color: #111;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tool-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.tool-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid #ded8cd;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.project-keyword {
+  margin-bottom: 36px;
+}
+
+.project-keyword p {
+  margin-top: 12px;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.global-ui {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+.global-ui.show {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
 }
