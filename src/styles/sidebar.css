@@ -5,9 +5,9 @@
   width: 260px;
   height: 100vh;
   padding: 56px 48px;
-  background: rgba(248, 247, 245, 0.82);
+  background: #ffebf7;
   backdrop-filter: blur(18px);
-  border-right: 1px solid #ded8cd;
+  border-right: 1px solid #ddd0d8;
   z-index: 100;
 }
 
@@ -50,7 +50,7 @@
 
 .side-nav button span {
   margin-right: 20px;
-  color: #8aad22;
+  color: #f334a7;
 }
 
 .interface-mode {

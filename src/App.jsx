@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
-import IntroPortal from "./components/IntroPortal";
 import Hero from "./components/Hero";
 import WorkSection from "./components/WorkSection";
 import VideoSection from "./components/VideoSection";
@@ -14,10 +13,6 @@ import useLenis from "./hooks/useLenis";
 
 function App() {
   useLenis();
-
-  const [entered, setEntered] = useState(() => {
-    return sessionStorage.getItem("introEntered") === "true";
-  });
 
   const [uiVisible, setUiVisible] = useState(false);
 
@@ -34,11 +29,6 @@ function App() {
     };
   }, []);
 
-  const handleEnter = () => {
-    sessionStorage.setItem("introEntered", "true");
-    setEntered(true);
-  };
-
   return (
     <div className="portfolio">
       <div className={`global-ui ${uiVisible ? "show" : ""}`}>
@@ -48,8 +38,6 @@ function App() {
 
       <main className={`main ${uiVisible ? "with-ui" : "intro-mode"}`}>
         <Header />
-
-        {!entered && <IntroPortal onEnter={handleEnter} />}
 
         <Hero />
         <WorkSection />

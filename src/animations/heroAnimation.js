@@ -1,49 +1,86 @@
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export function heroAnimation() {
-  const tl = gsap.timeline();
-
-  tl.fromTo(
-    ".yj-block",
-    {
-      opacity: 0,
-      y: 80,
-      rotate: 20,
-      scale: 0.6,
-    },
-    {
-      opacity: 1,
-      y: 0,
-      rotate: 0,
-      scale: 1,
-      duration: 1,
-      stagger: 0.05,
+  const tl = gsap.timeline({
+    defaults: {
       ease: "power3.out",
     },
-  );
-
-  gsap.to(".yj-logo-wrap", {
-    scale: 2.8,
-    opacity: 0,
-    scrollTrigger: {
-      trigger: ".hero",
-      start: "top top",
-      end: "bottom top",
-      scrub: 1,
-    },
   });
 
-  gsap.to(".hero-text", {
-    y: -80,
-    opacity: 0,
-    scrollTrigger: {
-      trigger: ".hero",
-      start: "40% top",
-      end: "bottom top",
-      scrub: 1,
-    },
+  tl.to(".hero-bg-glow", {
+    opacity: 1,
+    scale: 1,
+    duration: 1,
+  })
+    .to(
+      ".hero-orb",
+      {
+        opacity: 1,
+        filter: "blur(0px)",
+        scale: 1,
+        duration: 1.3,
+      },
+      "-=0.6",
+    )
+    .to(
+      ".hero-text",
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+      },
+      "-=0.5",
+    )
+    .to(
+      ".hero-ui",
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+      },
+      "-=0.4",
+    );
+
+  gsap.to(".hero-orb", {
+    scale: 1,
+    duration: 2.8,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
   });
+
+  gsap.to(".hero-diamond", {
+    rotation: 8,
+    duration: 8,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+  });
+
+  gsap.to(".hero-diamond", {
+    scale: 1,
+    duration: 4,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+  });
+
+  gsap.to(".orb-glow", {
+    scale: 1.2,
+    opacity: 0.9,
+    duration: 3,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+  });
+
+  return () => {
+    tl.kill();
+    gsap.killTweensOf(".hero-orb");
+    gsap.killTweensOf(".hero-diamond");
+    gsap.killTweensOf(".orb-glow");
+    gsap.killTweensOf(".hero-bg-glow");
+    gsap.killTweensOf(".hero-text");
+    gsap.killTweensOf(".hero-ui");
+  };
 }

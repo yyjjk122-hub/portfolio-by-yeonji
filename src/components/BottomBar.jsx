@@ -1,42 +1,102 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+const allSections = [
+  { id: "work01", label: "WEB PROJECT 01" },
+  { id: "work02", label: "HOME START" },
+  { id: "work03", label: "WEB PROJECT 03" },
+  { id: "work04", label: "WEB PROJECT 04" },
+  { id: "video", label: "VIDEO ARCHIVE" },
+  { id: "design", label: "DESIGN ARCHIVE" },
+  { id: "about", label: "ABOUT ME" },
+];
 
 function BottomBar() {
+  const [sections, setSections] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isScrolling, setIsScrolling] = useState(false);
+
   useEffect(() => {
+    const existingSections = allSections.filter((section) => document.getElementById(section.id));
+
+    setSections(existingSections);
+  }, []);
+
+  useEffect(() => {
+    if (sections.length === 0) return;
+
     let scrollTimer;
 
-    const handleScroll = () => {
-      const nowViewing = document.querySelector(".now-viewing");
-      if (!nowViewing) return;
+    const getActiveIndex = () => {
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+      const viewportCenter = window.innerHeight / 2;
 
-      nowViewing.classList.add("scrolling");
+      sections.forEach((section, index) => {
+        const el = document.getElementById(section.id);
+        if (!el) return;
+
+        const rect = el.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(sectionCenter - viewportCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      return closestIndex;
+    };
+
+    const handleScroll = () => {
+      setIsScrolling(true);
 
       clearTimeout(scrollTimer);
 
       scrollTimer = setTimeout(() => {
-        nowViewing.classList.remove("scrolling");
+        setIsScrolling(false);
       }, 150);
+
+      setActiveIndex(getActiveIndex());
     };
 
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
       clearTimeout(scrollTimer);
     };
-  }, []);
+  }, [sections]);
+
+  if (sections.length === 0) return null;
+
+  const currentSection = sections[activeIndex];
+  const nextSection = sections[activeIndex + 1] || sections[0];
 
   return (
     <div className="bottom-bar">
       <div className="bottom-left">
-        <span className="now-viewing">● NOW VIEWING</span>
-        <strong>WEB PROJECT 01</strong>
+        <span className={`now-viewing ${isScrolling ? "scrolling" : ""}`}>● NOW VIEWING</span>
+        <strong>{currentSection.label}</strong>
       </div>
 
       <div className="bottom-center">
         <button type="button">|‹</button>
-        <p>01 / 05</p>
+
+        <p>
+          {String(activeIndex + 1).padStart(2, "0")} / {String(sections.length).padStart(2, "0")}
+        </p>
+
         <div className="progress">
-          <span></span>
+          <span
+            style={{
+              width: `${((activeIndex + 1) / sections.length) * 100}%`,
+            }}
+          ></span>
         </div>
 
         <button type="button">›|</button>
@@ -44,7 +104,7 @@ function BottomBar() {
 
       <div className="bottom-right">
         <span>NEXT SECTION</span>
-        <strong>VIDEO ARCHIVE</strong>
+        <strong>{nextSection.label}</strong>
       </div>
     </div>
   );

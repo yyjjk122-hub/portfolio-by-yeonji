@@ -7,10 +7,7 @@
 body {
   font-family: "Suit";
   color: #111;
-  background:
-    radial-gradient(circle at 15% 18%, rgba(255, 205, 230, 0.12), transparent 28%),
-    radial-gradient(circle at 85% 12%, rgba(185, 225, 255, 0.12), transparent 30%),
-    linear-gradient(135deg, #fbf9ff 0%, #f7f9ff 35%, #fff8fb 68%, #f9f8f1 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #fff3fa 50%, #ffffff 100%);
   overflow-x: hidden;
 }
 
@@ -36,7 +33,7 @@ img {
   max-width: 100%;
 }
 
-/* common.css */
+/* 공통섹션 css */
 
 .project-panel {
   align-self: start;
@@ -44,23 +41,23 @@ img {
 
 .section-num {
   display: block;
-  margin-bottom: 12px;
-  color: #8aad22;
-  font-size: 18px;
+  margin-bottom: 18px;
+  color: #e72e9a;
+  font-size: 20px;
   font-weight: 700;
 }
 
 .project-panel h2 {
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   font-size: 32px;
   line-height: 1.1;
   letter-spacing: -1px;
 }
 
 .project-desc {
-  margin-bottom: 34px;
+  margin-bottom: 30px;
   color: #555;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.8;
 }
 
@@ -77,15 +74,15 @@ img {
 
 .project-meta span,
 .info-label {
-  color: #999;
-  font-size: 11px;
+  color: #e7569f;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.8px;
 }
 
 .project-meta strong {
   color: #111;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
 }
 
@@ -93,7 +90,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 12px;
+  margin: 12px 0;
 }
 
 .tool-badge {
@@ -101,9 +98,11 @@ img {
   align-items: center;
   gap: 6px;
   padding: 8px 12px;
-  border: 1px solid #ded8cd;
+  border: 1px solid rgba(216, 138, 184, 0.35);
+  color: #4b3f46;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.55);
+
   font-size: 12px;
   font-weight: 700;
 }
@@ -118,14 +117,13 @@ img {
   font-size: 13px;
   line-height: 1.7;
 }
+
 .global-ui {
   position: fixed;
   inset: 0;
-
   z-index: 9999;
 
   opacity: 0;
-
   visibility: hidden;
 
   pointer-events: none;
@@ -137,8 +135,13 @@ img {
 
 .global-ui.show {
   opacity: 1;
-
   visibility: visible;
+  pointer-events: none;
+}
 
+.sidebar,
+.bottom-bar,
+.sidebar *,
+.bottom-bar * {
   pointer-events: auto;
 }
