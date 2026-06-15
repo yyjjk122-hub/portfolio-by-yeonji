@@ -2,6 +2,24 @@
   min-height: 100vh;
 }
 
+/* Sidebar + BottomBar 전체 숨김/등장 */
+.global-ui {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
+}
+
+.global-ui.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* 메인 영역 */
 .main {
   min-height: 100vh;
   padding-bottom: 140px;
@@ -9,10 +27,12 @@
   transition: margin-left 0.8s ease;
 }
 
+/* Intro 화면에서는 왼쪽 여백 없음 */
 .main.intro-mode {
   margin-left: 0;
 }
 
+/* Enter 이후 Sidebar 영역만큼 밀기 */
 .main.with-ui {
   margin-left: 260px;
 }

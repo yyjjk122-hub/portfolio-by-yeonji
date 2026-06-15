@@ -8,7 +8,7 @@ function VideoSection() {
   return (
     <section className="video-section" id="video">
       <div className="section-info project-panel">
-        <span className="section-num">03</span>
+        <span className="section-num">02</span>
 
         <h2>VIDEO ARCHIVE</h2>
 

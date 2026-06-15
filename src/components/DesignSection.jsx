@@ -29,7 +29,7 @@ function DesignSection() {
       type: "image",
       title: "Banner Design A",
       desc: "브랜드 이미지와 문구 전달력을 고려한 배너 디자인입니다.",
-      src: "/images/design/banner-a.jpg",
+      src: "/images/design/FILM.jpg",
     },
     {
       type: "image",
@@ -92,7 +92,7 @@ function DesignSection() {
   return (
     <section className="design-section" id="design">
       <div className="section-info project-panel">
-        <span className="section-num">04</span>
+        <span className="section-num">03</span>
 
         <h2>DESIGN ARCHIVE</h2>
 
@@ -106,7 +106,7 @@ function DesignSection() {
 
           <div>
             <span>YEAR</span>
-            <strong>2025</strong>
+            <strong>2026</strong>
           </div>
 
           <div>
@@ -134,8 +134,8 @@ function DesignSection() {
       <div className="design-archive">
         <div className="design-group">
           <div className="design-group-title">
-            <span>01</span>
-            <h3>BANNER DESIGN</h3>
+            <span>BANNER</span>
+            <h3>Banner Design</h3>
           </div>
 
           <div className="design-list banner-list">{bannerItems.map((item, index) => renderCard(item, index))}</div>
@@ -143,8 +143,8 @@ function DesignSection() {
 
         <div className="design-group">
           <div className="design-group-title">
-            <span>02</span>
-            <h3>EVENT PAGE</h3>
+            <span>EVENT</span>
+            <h3>Event Page</h3>
           </div>
 
           <div className="design-list single-list">{eventItems.map((item, index) => renderCard(item, index))}</div>
@@ -152,8 +152,8 @@ function DesignSection() {
 
         <div className="design-group">
           <div className="design-group-title">
-            <span>03</span>
-            <h3>ARTWORK</h3>
+            <span>ARTWORK</span>
+            <h3>Artwork</h3>
           </div>
 
           <div className="design-list single-list">{artworkItems.map((item, index) => renderCard(item, index))}</div>

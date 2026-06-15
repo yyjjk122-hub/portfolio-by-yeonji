@@ -1,15 +1,16 @@
 .work-section {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 80px;
+  grid-template-columns: minmax(340px, 430px) 1fr;
+  gap: 56px;
 
   min-height: 120vh;
-  padding: 140px 7vw;
+  padding: 120px 7vw;
 
   border-bottom: 1px solid #ded8cd;
 }
 
 /* 프로젝트 설명 */
+
 .project-detail {
   margin-top: 18px;
 
@@ -44,15 +45,86 @@
   height: 5px;
 
   border-radius: 50%;
-  background: #f334a7;
+
+  background: #d75c9d;
 }
 
-/* VIEW PROJECT 버튼 */
+/* ========================= */
+/* TYPE / YEAR / ROLE */
+/* ========================= */
+
+.project-meta {
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.project-meta>div {
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+}
+
+.project-meta span,
+.info-label {
+  min-width: 86px;
+
+  color: #d75c9d;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.project-meta strong {
+  color: #111;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* ========================= */
+/* TOOLS */
+/* ========================= */
+
+.project-tools {
+  margin-top: 36px;
+}
+
+.tool-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+/* ========================= */
+/* KEYWORD */
+/* ========================= */
+
+.project-keyword {
+  margin-top: 36px;
+}
+
+.project-keyword p {
+  margin-top: 18px;
+
+  color: #444;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ========================= */
+/* VIEW BUTTON */
+/* ========================= */
+
 .view-btn {
   position: relative;
 
   display: inline-block;
 
+  margin-top: 42px;
   padding-bottom: 10px;
 
   font-size: 13px;
@@ -79,7 +151,56 @@
   transform: scaleX(0.6);
 }
 
-/* WEB 01: 3분할 프리뷰 */
+/* ========================= */
+/* HOME START MOCKUP */
+/* ========================= */
+
+.home-mockup-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 430px;
+  padding: 12px 24px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.42);
+
+  box-shadow: 0 24px 72px rgba(160, 120, 145, 0.1);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.home-mockup-preview img {
+  width: min(118%, 980px);
+  max-width: none;
+
+  display: block;
+
+  filter: drop-shadow(0 26px 42px rgba(70, 50, 60, 0.13));
+
+  transition: transform 0.5s ease;
+}
+
+.home-mockup-preview:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 32px 90px rgba(160, 120, 145, 0.15);
+}
+
+.home-mockup-preview:hover img {
+  transform: scale(1.03);
+}
+
+/* ========================= */
+/* WEB PROJECT 02 */
+/* ========================= */
+
 .work-preview {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 240px;
@@ -112,13 +233,17 @@
 
 .big-preview {
   grid-row: 1 / 3;
+
   height: 444px;
+
   border-radius: 24px;
 }
 
 .small-preview {
   height: 210px;
+
   border-radius: 18px;
+
   transition: transform 0.35s ease;
 }
 
@@ -128,6 +253,7 @@
   height: 100%;
 
   display: block;
+
   object-fit: contain;
   object-position: center;
 
@@ -142,51 +268,10 @@
   transform: translateY(-4px);
 }
 
-/* WEB 02: 목업 한 장 */
-.work-preview.single-mockup {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
 
-  height: 520px;
-  min-height: 0;
-  padding: 0;
-
-  overflow: hidden;
-
-  border-radius: 28px;
-
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-
-  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.08);
-
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease;
-}
-
-.work-preview.single-mockup img {
-  width: 78%;
-  max-width: 860px;
-  height: auto;
-
-  display: block;
-  object-fit: contain;
-
-  transition: transform 0.6s ease;
-}
-
-.work-preview.single-mockup:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.12);
-}
-
-.work-preview.single-mockup:hover img {
-  transform: scale(1.03);
-}
-
-/* 반응형 */
 @media (max-width: 1100px) {
   .work-section {
     grid-template-columns: 1fr;
@@ -195,9 +280,19 @@
     padding: 120px 32px;
   }
 
+  .home-mockup-preview {
+    min-height: 400px;
+    padding: 12px 20px;
+  }
+
+  .home-mockup-preview img {
+    width: min(114%, 820px);
+  }
+
   .work-preview {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+
     height: auto;
   }
 
@@ -210,15 +305,6 @@
   .big-preview {
     grid-row: auto;
   }
-
-  .work-preview.single-mockup {
-    height: auto;
-    padding: 32px 0;
-  }
-
-  .work-preview.single-mockup img {
-    width: 88%;
-  }
 }
 
 @media (max-width: 600px) {
@@ -226,17 +312,19 @@
     padding: 100px 22px;
   }
 
+  .home-mockup-preview {
+    min-height: 300px;
+    padding: 10px;
+
+    border-radius: 22px;
+  }
+
+  .home-mockup-preview img {
+    width: 128%;
+  }
+
   .big-preview,
   .small-preview {
     min-height: 190px;
-  }
-
-  .work-preview.single-mockup {
-    padding: 24px 0;
-    border-radius: 20px;
-  }
-
-  .work-preview.single-mockup img {
-    width: 94%;
   }
 }
