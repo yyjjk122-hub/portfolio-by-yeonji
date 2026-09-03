@@ -1,5 +1,4 @@
 import { FaHtml5, FaCss3Alt, FaJs } from "react-icons/fa";
-import { SiGreensock } from "react-icons/si";
 
 function ToolBadge({ icon, label }) {
   return (
@@ -132,7 +131,7 @@ function WorkSection() {
           rel="noreferrer"
         >
           <img
-            src="/images/works/web01-mokup.png"
+            src={`${import.meta.env.BASE_URL}images/works/web01-mokup.png`}
             alt="HOME START 목업"
           />
         </a>
@@ -166,7 +165,7 @@ function WorkSection() {
           rel="noreferrer"
         >
           <img
-            src="/images/works/web02-mokup.png"
+            src={`${import.meta.env.BASE_URL}images/works/web02-mokup.png`}
             alt="차백도 클론코딩 목업"
           />
         </a>

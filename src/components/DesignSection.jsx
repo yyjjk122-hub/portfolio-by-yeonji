@@ -9,7 +9,7 @@ function ToolBadge({ icon, label }) {
     </span>
   );
 }
-
+const BASE_URL = import.meta.env.BASE_URL;
 function DesignSection() {
   const [modalItem, setModalItem] = useState(null);
 
@@ -24,15 +24,15 @@ function DesignSection() {
       title: "Dunkin Campaign",
       desc: "던킨도너츠 브랜드 무드를 활용해 구성한 2종 배너 시리즈입니다.",
       images: [
-        "/images/design/dunkin01.jpg",
-        "/images/design/dunkin02.jpg",
+        `${BASE_URL}images/design/dunkin01.jpg`,
+        `${BASE_URL}images/design/dunkin02.jpg`,
       ],
     },
     {
       type: "image",
       title: "Banner Design A",
       desc: "브랜드 이미지와 문구 전달력을 고려한 배너 디자인입니다.",
-      src: "/images/design/FILM.jpg",
+      src: `${BASE_URL}images/design/FILM.jpg`,
     },
   ];
 
@@ -41,7 +41,7 @@ function DesignSection() {
       type: "image",
       title: "Event Page",
       desc: "프로모션 흐름과 사용자 시선을 고려한 긴 이벤트 페이지 디자인입니다.",
-      src: "/images/design/eventpage.png",
+      src: `${BASE_URL}images/design/eventpage.png`,
       longPage: true,
     },
   ];
@@ -51,7 +51,7 @@ function DesignSection() {
       type: "image",
       title: "Artwork",
       desc: "레퍼런스 이미지를 바탕으로 선과 색감을 재구성한 디지털 아트워크입니다.",
-      src: "/images/design/artwork01.jpg",
+      src: `${BASE_URL}images/design/artwork01.jpg`,
       reference: true,
     },
   ];

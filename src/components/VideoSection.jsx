@@ -48,7 +48,7 @@ function VideoSection() {
           }
         >
           <img
-            src="/images/works/video01.png"
+            src={`${import.meta.env.BASE_URL}images/works/video01.png`}
             alt="인생전시회 영상 썸네일"
           />
 
@@ -83,7 +83,7 @@ function VideoSection() {
           }
         >
           <img
-            src="/images/works/video02.png"
+            src={`${import.meta.env.BASE_URL}images/works/video02.png`}
             alt="키네틱 타이포그래피 영상 썸네일"
           />
 

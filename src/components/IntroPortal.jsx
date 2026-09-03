@@ -14,7 +14,7 @@ function IntroPortal({ onEnter }) {
     return (
         <section className="intro-portal">
             <div className="portal-flower">
-                <img src="/images/flower.png" alt="" />
+                <img src={`${import.meta.env.BASE_URL}images/flower.png`} alt="" />
             </div>
 
             <button className="portal-copy" type="button">
