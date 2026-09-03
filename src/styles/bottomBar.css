@@ -1,33 +1,36 @@
 .bottom-bar {
   position: fixed;
+
   left: 290px;
   right: 30px;
   bottom: 24px;
+
   height: 90px;
   padding: 0 48px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   border-radius: 28px;
+
   background: rgba(255, 255, 255, 0.88);
+
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+
   z-index: 999;
 }
 
-.bottom-bar span {
-  display: block;
-  margin-bottom: 6px;
-  color: #8aad22;
-  font-size: 11px;
-}
 
-.bottom-bar strong {
-  font-size: 16px;
-}
+/* LEFT */
+
 .bottom-left {
   display: flex;
   flex-direction: column;
   gap: 6px;
+
+  width: 230px;
+  flex-shrink: 0;
 }
 
 .bottom-bar .now-viewing {
@@ -43,21 +46,119 @@
   font-size: 24px;
   line-height: 1;
 }
+
+
+/* CENTER - 화면 중앙에 완전 고정 */
+
 .bottom-center {
-  display: flex;
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  display: grid;
+
+  grid-template-columns:
+    36px 72px 360px 36px;
+
   align-items: center;
-  gap: 28px;
+
+  column-gap: 28px;
+
+  width: auto;
 }
 
+.bottom-center button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  font-size: 18px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.bottom-center p {
+  margin: 0;
+
+  width: 72px;
+
+  font-size: 16px;
+  line-height: 1;
+
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+/* PROGRESS */
+
 .progress {
-  width: 260px;
-  height: 2px;
-  background: #d8d3ca;
+  position: relative;
+
+  width: 360px;
+  height: 3px;
+
+  background: #d8d4cf;
+
+  overflow: hidden;
 }
 
 .progress span {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  height: 100%;
+  margin: 0;
+
+  background: #8aaa3d;
+
+  transition: width 0.45s ease;
+}
+
+
+/* RIGHT */
+
+.bottom-right {
+  width: 230px;
+
+  margin-left: auto;
+
+  flex-shrink: 0;
+
+  text-align: left;
+}
+
+.bottom-right strong {
   display: block;
-  width: 20%;
-  height: 2px;
-  background: #8aad22;
+}
+
+
+/* COMMON */
+
+.bottom-bar span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #8aad22;
+
+  font-size: 11px;
+}
+
+.bottom-bar strong {
+  font-size: 16px;
 }

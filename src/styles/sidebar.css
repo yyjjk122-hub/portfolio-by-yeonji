@@ -72,15 +72,14 @@
 
 .status-dot {
   display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-left: 4px;
-  border-radius: 50%;
-  background: #111;
+  width: 10px;
+  height: 10px;
+  margin: 6px 0 0 3px;
 
-  transition: background 0.2s ease;
+  border-radius: 50%;
+  background: #8aaa3d;
 }
 
 .status-dot.scrolling {
-  background: #ff3b30;
+  background: #e53935;
 }

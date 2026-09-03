@@ -1,7 +1,11 @@
+/* ========================================
+   ARCHIVE MODAL
+======================================== */
+
 .archive-modal {
   position: fixed;
   inset: 0;
-  z-index: 999999;
+  z-index: 99999999;
 
   display: flex;
   align-items: center;
@@ -11,7 +15,15 @@
 
   background: rgba(15, 12, 20, 0.72);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  overflow: hidden;
 }
+
+
+/* ========================================
+   MODAL BOX
+======================================== */
 
 .archive-modal-box {
   position: relative;
@@ -24,29 +36,51 @@
   border-radius: 28px;
   border: 1px solid rgba(255, 255, 255, 0.22);
 
-  background: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 30px 90px rgba(20, 15, 35, 0.35);
+  background: rgba(35, 30, 42, 0.92);
 
-  overflow: auto;
+  box-shadow: 0 30px 90px rgba(20, 15, 35, 0.45);
+
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
+
+/* ========================================
+   TITLE
+======================================== */
+
 .archive-modal-box h3 {
-  margin-bottom: 18px;
+  margin: 0 60px 20px 0;
 
   color: #fff;
+
   font-size: 20px;
   font-weight: 700;
 }
 
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
 .modal-close {
   position: absolute;
+
   top: 18px;
   right: 18px;
+
   z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   width: 42px;
   height: 42px;
 
+  padding: 0;
+
+  border: 0;
   border-radius: 50%;
 
   color: #fff;
@@ -54,48 +88,92 @@
 
   font-size: 24px;
   line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: scale(1.06);
+}
+
+
+/* ========================================
+   SINGLE IMAGE
+   EVENT / ARTWORK / BANNER
+======================================== */
 
 .modal-image {
   width: 100%;
   max-height: 74vh;
 
-  object-fit: contain;
   display: block;
 
+  object-fit: contain;
+
   border-radius: 18px;
+
   background: rgba(255, 255, 255, 0.08);
 }
 
-.archive-image-wrap {
-  display: flex;
-  justify-content: center;
-}
 
-.archive-image-wrap img {
-  max-width: 100%;
-  border-radius: 16px;
-  display: block;
-}
+/* ========================================
+   SERIES
+   DUNKIN 2 DESIGNS
+======================================== */
 
-/* 던킨 3장 모드 */
-
-.archive-image-wrap.series-mode {
+.modal-series {
   display: grid;
+
   grid-template-columns: repeat(2, minmax(0, 1fr));
+
   gap: 18px;
 
-  max-width: 860px;
+  width: 100%;
+  max-width: 900px;
+
   margin: 0 auto;
 }
 
-.archive-image-wrap.series-mode img {
+.modal-series img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: auto;
 
-  object-fit: cover;
-  border-radius: 14px;
+  display: block;
+
+  object-fit: contain;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.08);
 }
+
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+.archive-modal-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.archive-modal-box::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+}
+
+.archive-modal-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
 
 @media (max-width: 900px) {
   .archive-modal {
@@ -103,7 +181,115 @@
   }
 
   .archive-modal-box {
+    width: 94vw;
+    max-height: 90vh;
+
     padding: 20px;
+
     border-radius: 22px;
+  }
+
+  .modal-image {
+    max-height: 78vh;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+  .archive-modal {
+    padding: 12px;
+  }
+
+  .archive-modal-box {
+    width: 96vw;
+
+    padding: 18px;
+
+    border-radius: 18px;
+  }
+
+  .archive-modal-box h3 {
+    margin-right: 50px;
+    font-size: 17px;
+  }
+
+  .modal-close {
+    top: 14px;
+    right: 14px;
+
+    width: 36px;
+    height: 36px;
+
+    font-size: 21px;
+  }
+
+  .modal-series {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   LONG EVENT PAGE
+========================= */
+
+.long-page-modal {
+  width: min(900px, 92vw);
+  height: 88vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 30px 34px;
+}
+
+.long-page-image-wrap {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-bottom: 30px;
+}
+
+.long-page-image {
+  width: 680px;
+  max-width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  border-radius: 12px;
+}
+
+/* 스크롤바 */
+.long-page-modal::-webkit-scrollbar {
+  width: 7px;
+}
+
+.long-page-modal::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 999px;
+}
+
+.long-page-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (max-width: 700px) {
+  .long-page-modal {
+    width: 96vw;
+    height: 90vh;
+
+    padding: 20px 16px;
+  }
+
+  .long-page-image {
+    width: 100%;
   }
 }

@@ -63,7 +63,11 @@ function ProjectInfo({
 
         <div className="tool-list">
           {tools.map((tool) => (
-            <ToolBadge key={tool.label} icon={tool.icon} label={tool.label} />
+            <ToolBadge
+              key={tool.label}
+              icon={tool.icon}
+              label={tool.label}
+            />
           ))}
         </div>
       </div>
@@ -73,7 +77,12 @@ function ProjectInfo({
         <p>{keywords}</p>
       </div>
 
-      <a className="view-btn" href={link} target="_blank" rel="noreferrer">
+      <a
+        className="view-btn"
+        href={link}
+        target="_blank"
+        rel="noreferrer"
+      >
         VIEW PROJECT ↗
       </a>
     </div>
@@ -89,18 +98,18 @@ function WorkSection() {
 
   const project02Tools = [
     { icon: <FaHtml5 />, label: "HTML" },
+    { icon: <FaCss3Alt />, label: "CSS" },
     { icon: <FaJs />, label: "JS" },
-    { icon: <SiGreensock />, label: "GSAP" },
   ];
-
   return (
     <section id="work">
-      <section className="work-section">
+      {/* PROJECT 01 */}
+      <section className="work-section" id="work01">
         <ProjectInfo
           number="01"
           title="HOME START"
           desc="처음 자취를 시작하는 사용자를 위한 반응형 라이프스타일 웹사이트입니다."
-          detail="4인 팀 프로젝트로 진행했으며, 페이지 구조 설계부터 퍼블리싱, 반응형 구현, JavaScript 인터랙션 제작까지 전반적인 개발 과정에 참여했습니다. 디자인 전공 팀원이 메인 캐릭터 일러스트와 비주얼 방향을 주도했고, 저는 디자인 요소를 제외한 페이지 구현과 인터랙션 완성도 향상에 높은 비중으로 기여했습니다."
+          detail="4인 팀 프로젝트로 진행했으며, 페이지 구조 설계부터 퍼블리싱, 반응형 구현, JavaScript 인터랙션 제작까지 전반적인 개발 과정에 참여했습니다. 팀원들과 기획 및 디자인 방향을 조율하고, 이를 실제 웹 화면으로 구현하며 반응형 UI와 인터랙션의 완성도를 높이는 데 기여했습니다."
           type="Responsive Web"
           year="2026"
           role="Frontend Publishing · Interaction"
@@ -122,41 +131,44 @@ function WorkSection() {
           target="_blank"
           rel="noreferrer"
         >
-          <img src="/images/works/web01-mokup.png" alt="HOME START 목업" />
+          <img
+            src="/images/works/web01-mokup.png"
+            alt="HOME START 목업"
+          />
         </a>
       </section>
 
+      {/* PROJECT 02 */}
       <section className="work-section" id="work02">
         <ProjectInfo
           number="02"
-          title="WEB PROJECT 02"
-          desc="브랜드의 가치를 담은 반응형 웹사이트입니다."
-          detail="브랜드의 분위기를 시각적으로 전달하기 위해 레이아웃과 컬러, 인터랙션 흐름을 중심으로 구성했습니다. 사용자가 자연스럽게 콘텐츠를 탐색할 수 있도록 섹션 간 이동과 시각적 집중도를 고려했습니다."
-          type="Responsive Web"
-          year="2025"
-          role="Publishing / Motion"
+          title="차백도 Clone Coding"
+          desc="차백도 공식 홈페이지 일부 화면을 참고해 구현한 클론코딩 프로젝트입니다."
+          detail="기존 웹사이트의 레이아웃과 콘텐츠 구조를 분석한 뒤, HTML과 CSS를 중심으로 화면을 재구성했습니다. 이미지 배치, 여백, 타이포그래피 등 원본 사이트의 시각적 구성을 구현하는 데 중점을 두었으며, JavaScript를 활용해 필요한 기본 인터랙션을 적용했습니다."
+          type="Clone Coding"
+          year="2026"
+          role="Publishing"
           contribution={[
-            "메인 페이지 퍼블리싱 및 반응형 레이아웃 구현",
-            "GSAP 기반 스크롤 모션 및 인터랙션 적용",
-            "이미지, 버튼, 섹션 간 UI 흐름 정리",
+            "기존 웹페이지 레이아웃 및 구조 분석",
+            "HTML/CSS 기반 메인 화면 구현",
+            "이미지 및 콘텐츠 배치 재현",
+            "JavaScript 기반 기본 인터랙션 적용",
           ]}
-          keywords="UI/UX · Animation · Responsive"
+          keywords="Clone Coding · Publishing · Layout · UI"
           tools={project02Tools}
-          link="#"
+          link="https://yyjjk122-hub.github.io/ChaPanda/"
         />
 
-        <a className="work-preview" href="#" target="_blank" rel="noreferrer">
-          <div className="big-preview">
-            <img src="/images/works/web01-main.png" alt="WEB PROJECT 02 메인 화면" />
-          </div>
-
-          <div className="small-preview">
-            <img src="/images/works/web01-sub01.png" alt="WEB PROJECT 02 서브 화면 1" />
-          </div>
-
-          <div className="small-preview">
-            <img src="/images/works/web01-sub02.png" alt="WEB PROJECT 02 서브 화면 2" />
-          </div>
+        <a
+          className="home-mockup-preview"
+          href="https://yyjjk122-hub.github.io/ChaPanda/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src="/images/works/web02-mokup.png"
+            alt="차백도 클론코딩 목업"
+          />
         </a>
       </section>
     </section>

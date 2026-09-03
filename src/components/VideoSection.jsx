@@ -3,7 +3,10 @@ function ToolBadge({ label }) {
 }
 
 function VideoSection() {
-  const videoTools = [{ label: "Premiere Pro" }, { label: "After Effects" }];
+  const videoTools = [
+    { label: "Premiere Pro" },
+    { label: "After Effects" },
+  ];
 
   return (
     <section className="video-section" id="video">
@@ -12,7 +15,9 @@ function VideoSection() {
 
         <h2>VIDEO ARCHIVE</h2>
 
-        <p className="project-desc">기획, 편집, 모션 작업을 중심으로 구성한 영상 아카이브입니다.</p>
+        <p className="project-desc">
+          기획, 편집, 모션 작업을 중심으로 구성한 영상 아카이브입니다.
+        </p>
 
         <div className="project-tools">
           <span className="info-label">TOOLS</span>
@@ -31,15 +36,33 @@ function VideoSection() {
       </div>
 
       <div className="video-list">
-        <button className="video-card video-card-button" type="button" onClick={() => window.open("https://youtu.be/Yl41CTKGLX8", "_blank")}>
-          <div className="video-thumb-placeholder">YOUTUBE VIDEO</div>
+        {/* 01 인생전시회 */}
+        <button
+          className="video-card video-card-button"
+          type="button"
+          onClick={() =>
+            window.open(
+              "https://youtu.be/Yl41CTKGLX8",
+              "_blank"
+            )
+          }
+        >
+          <img
+            src="/images/works/video01.png"
+            alt="인생전시회 영상 썸네일"
+          />
 
           <div className="play-btn">▶</div>
 
           <div className="video-card-info">
             <span className="video-label">01</span>
+
             <h3>인생전시회</h3>
-            <p>팀 프로젝트 영상으로, 스토리 흐름과 컷 편집을 중심으로 구성했습니다.</p>
+
+            <p>
+              팀 프로젝트 영상으로, 스토리 흐름과 컷 편집을
+              중심으로 구성했습니다.
+            </p>
 
             <div className="video-meta">
               <span>Editing · Motion</span>
@@ -48,19 +71,37 @@ function VideoSection() {
           </div>
         </button>
 
-        <button className="video-card video-card-button" type="button" onClick={() => alert("영상 준비 중입니다.")}>
-          <img src="/images/LOGO.png" alt="비디오 목업" />
+        {/* 02 키네틱 타이포그래피 */}
+        <button
+          className="video-card video-card-button"
+          type="button"
+          onClick={() =>
+            window.open(
+              "https://youtu.be/zDTzvT8FE_I",
+              "_blank"
+            )
+          }
+        >
+          <img
+            src="/images/works/video02.png"
+            alt="키네틱 타이포그래피 영상 썸네일"
+          />
 
           <div className="play-btn">▶</div>
 
           <div className="video-card-info">
             <span className="video-label">02</span>
-            <h3>Video Project 02</h3>
-            <p>짧은 모션 그래픽 영상으로, 타이포 모션과 화면 전환을 중심으로 구성했습니다.</p>
+
+            <h3>키네틱 타이포그래피</h3>
+
+            <p>
+              타이포그래피의 움직임과 리듬을 활용해
+              텍스트의 시각적 흐름을 구성한 모션 그래픽 영상입니다.
+            </p>
 
             <div className="video-meta">
-              <span>Motion · Design</span>
-              <em>Coming Soon</em>
+              <span>Typography · Motion</span>
+              <em>01:10</em>
             </div>
           </div>
         </button>

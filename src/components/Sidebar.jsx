@@ -14,7 +14,7 @@ function Sidebar() {
 
       scrollTimer = setTimeout(() => {
         dot.classList.remove("scrolling");
-      }, 20);
+      }, 150);
     };
 
     window.addEventListener("scroll", handleScroll);

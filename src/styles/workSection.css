@@ -156,45 +156,39 @@
 /* ========================= */
 
 .home-mockup-preview {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* grid 안에서 영역 전체를 차지하지 않게 */
+  align-self: center;
+  justify-self: center;
 
-  min-height: 430px;
-  padding: 12px 24px;
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
 
-  border-radius: 30px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
 
-  background: rgba(255, 255, 255, 0.42);
+  line-height: 0;
+  overflow: visible;
 
-  box-shadow: 0 24px 72px rgba(160, 120, 145, 0.1);
-
-  overflow: hidden;
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
+  cursor: pointer;
 }
 
 .home-mockup-preview img {
-  width: min(118%, 980px);
-  max-width: none;
-
   display: block;
 
-  filter: drop-shadow(0 26px 42px rgba(70, 50, 60, 0.13));
+  width: auto;
+  max-width: 100%;
+  height: auto;
 
-  transition: transform 0.5s ease;
+  filter: drop-shadow(0 24px 35px rgba(80, 50, 70, 0.12));
+
+  transition: transform 0.4s ease;
 }
 
-.home-mockup-preview:hover {
-  transform: translateY(-6px);
-
-  box-shadow: 0 32px 90px rgba(160, 120, 145, 0.15);
-}
-
+/* 딱 이미지 위에 마우스가 올라갔을 때만 확대 */
 .home-mockup-preview:hover img {
-  transform: scale(1.03);
+  transform: scale(1.025);
 }
 
 /* ========================= */
