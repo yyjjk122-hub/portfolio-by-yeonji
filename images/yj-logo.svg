@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .1em;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #231f20;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 60px;
+      }
+
+      .cls-3 {
+        letter-spacing: .09em;
+      }
+
+      .cls-4 {
+        fill: #231f20;
+      }
+
+      .cls-5 {
+        font-family: Montserrat-Regular, Montserrat;
+        font-size: 107.29px;
+        font-variation-settings: 'wght' 400;
+        opacity: .98;
+      }
+
+      .cls-6 {
+        letter-spacing: .09em;
+      }
+
+      .cls-7 {
+        letter-spacing: .1em;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="cls-2" d="M1009.82,1202.33h-183.2c-34.87,0-63.4-28.93-63.4-64.29v-204.8c0-74.31-.94-64.29,63.4-56.31l82.66,11.74"/>
+    <path class="cls-2" d="M1116.11,890.22l76.92-21.28c63.72-13.93,63.4-12.37,63.4,64.29v204.8c0,35.36-28.53,64.29-63.4,64.29h-92.29"/>
+    <line class="cls-2" x1="1009.82" y1="1198.56" x2="1009.82" y2="869.87"/>
+    <path class="cls-2" d="M993.52,840.65c-39.09,0-106.4-28.23-147.03-56.5-76.45-53.19-75.06-107.91-53.69-134.16,23.53-28.89,77.11-13.65,125.21,38.99,34.65,37.92,43.66,52.98,64.96,98.04"/>
+    <rect class="cls-4" x="960.91" y="783.36" width="100.96" height="41.53" rx="20.77" ry="20.77"/>
+    <path class="cls-2" d="M1025.15,840.65c39.09,0,106.4-28.23,147.03-56.5,76.45-53.19,75.06-107.91,53.69-134.16-23.53-28.89-77.11-13.65-125.21,38.99-34.65,37.92-43.66,52.98-64.96,98.04"/>
+  </g>
+  <text class="cls-5" transform="translate(681.95 1423.52)"><tspan class="cls-3" x="0" y="0">Y</tspan><tspan class="cls-1" x="77.79" y="0">J </tspan><tspan class="cls-3" x="181.1" y="0">S</tspan><tspan class="cls-6" x="256.74" y="0">T</tspan><tspan class="cls-7" x="327.55" y="0">UDIO</tspan></text>
+</svg>
