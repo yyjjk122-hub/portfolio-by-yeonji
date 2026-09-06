@@ -81,12 +81,10 @@
   pointer-events: auto;
 }
 
-/* 배너는 2개 넓게 */
 .banner-list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-/* 이벤트 / 아트워크 */
 .single-list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -170,8 +168,6 @@
   pointer-events: none;
 }
 
-/* 배너 두 개는 넓어진 카드에 맞춰
-   썸네일도 약간 가로형 */
 .banner-list .design-thumbnail {
   aspect-ratio: 5 / 4;
 }
@@ -391,6 +387,16 @@
   line-height: 1.7;
 }
 
+.design-contribution {
+  display: block;
+  margin-top: 12px;
+
+  color: #e72e9a;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
 
 /* =========================
    RESPONSIVE

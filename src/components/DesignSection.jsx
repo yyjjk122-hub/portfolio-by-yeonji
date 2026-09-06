@@ -9,7 +9,9 @@ function ToolBadge({ icon, label }) {
     </span>
   );
 }
+
 const BASE_URL = import.meta.env.BASE_URL;
+
 function DesignSection() {
   const [modalItem, setModalItem] = useState(null);
 
@@ -101,6 +103,10 @@ function DesignSection() {
         <h3>{item.title}</h3>
 
         <p>{item.desc}</p>
+
+        <span className="design-contribution">
+          CONTRIBUTION 100% · INDIVIDUAL
+        </span>
       </button>
     );
   };

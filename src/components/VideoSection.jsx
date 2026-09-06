@@ -65,7 +65,14 @@ function VideoSection() {
             </p>
 
             <div className="video-meta">
-              <span>Editing · Motion</span>
+              <div className="video-meta-left">
+                <span>Editing · Motion</span>
+
+                <strong className="video-contribution">
+                  CONTRIBUTION 30% · TEAM OF 4
+                </strong>
+              </div>
+
               <em>07:08</em>
             </div>
           </div>
@@ -100,7 +107,14 @@ function VideoSection() {
             </p>
 
             <div className="video-meta">
-              <span>Typography · Motion</span>
+              <div className="video-meta-left">
+                <span>Typography · Motion</span>
+
+                <strong className="video-contribution">
+                  CONTRIBUTION 100% · INDIVIDUAL
+                </strong>
+              </div>
+
               <em>01:10</em>
             </div>
           </div>

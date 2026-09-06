@@ -18,6 +18,8 @@ function ProjectInfo({
   year,
   role,
   contribution = [],
+  contributionRate,
+  teamType,
   keywords,
   tools,
   link,
@@ -54,6 +56,13 @@ function ProjectInfo({
         <div>
           <span>ROLE</span>
           <strong>{role}</strong>
+        </div>
+
+        <div>
+          <span>CONTRIBUTION</span>
+          <strong>
+            {contributionRate} · {teamType}
+          </strong>
         </div>
       </div>
 
@@ -113,6 +122,8 @@ function WorkSection() {
           type="Responsive Web"
           year="2026"
           role="Frontend Publishing · Interaction"
+          contributionRate="30%"
+          teamType="TEAM OF 4"
           contribution={[
             "메인 및 서브 페이지 퍼블리싱 참여",
             "반응형 레이아웃 및 UI 구현",
@@ -148,6 +159,8 @@ function WorkSection() {
           type="Clone Coding"
           year="2026"
           role="Publishing"
+          contributionRate="100%"
+          teamType="INDIVIDUAL"
           contribution={[
             "기존 웹페이지 레이아웃 및 구조 분석",
             "HTML/CSS 기반 메인 화면 구현",
