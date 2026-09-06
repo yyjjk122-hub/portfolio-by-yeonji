@@ -1,30 +1,169 @@
 .about-section {
   min-height: 100vh;
-  padding: 160px 8vw;
+
+  padding: 140px 8vw 120px;
+
+  display: flex;
+  align-items: center;
+
   border-bottom: 1px solid #ded8cd;
 }
 
 .about-inner {
-  max-width: 900px;
+  width: 100%;
+  max-width: 1200px;
 }
 
-.about-inner span {
-  color: #8aad22;
+.about-label {
+  color: #e72e9a;
+
   font-size: 14px;
   font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .about-inner h2 {
   margin-top: 32px;
-  font-size: 64px;
-  line-height: 1.15;
-  letter-spacing: -2px;
+
+  font-size: clamp(52px, 5vw, 76px);
+  line-height: 1.12;
+  letter-spacing: -2.5px;
+
+  color: #111;
 }
 
-.about-inner p {
-  margin-top: 40px;
-  max-width: 620px;
+.about-copy {
+  margin-top: 48px;
+
+  /* 기존 720px → 넓게 */
+  max-width: 1050px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-copy p {
+  margin: 0;
+
   color: #555;
-  font-size: 18px;
-  line-height: 1.8;
+
+  /* 기존 17px → 살짝 축소 */
+  font-size: 16px;
+  line-height: 1.85;
+
+  word-break: keep-all;
+}
+
+.about-contact {
+  margin-top: 72px;
+  padding-top: 28px;
+
+  /* 본문과 폭 통일 */
+  max-width: 1050px;
+
+  border-top: 1px solid #ded8cd;
+}
+
+.about-contact>span {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #e72e9a;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.about-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #111;
+
+  font-size: clamp(24px, 2.2vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+
+  text-decoration: none;
+
+  transition: opacity 0.25s ease;
+}
+
+.about-contact a:hover {
+  opacity: 0.55;
+}
+
+.about-contact em {
+  font-style: normal;
+  font-size: 0.8em;
+}
+
+.about-footer {
+  margin-top: 90px;
+  padding-top: 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid #ded8cd;
+
+  color: #888;
+
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.about-footer p {
+  margin: 0;
+}
+
+.about-footer span {
+  white-space: nowrap;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .about-section {
+    min-height: 100vh;
+    padding: 110px 7vw 90px;
+  }
+
+  .about-inner h2 {
+    margin-top: 24px;
+
+    font-size: 42px;
+    line-height: 1.15;
+    letter-spacing: -1.8px;
+  }
+
+  .about-copy {
+    margin-top: 36px;
+    max-width: 100%;
+  }
+
+  .about-copy p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .about-contact {
+    margin-top: 56px;
+    max-width: 100%;
+  }
+
+  .about-footer {
+    margin-top: 70px;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }

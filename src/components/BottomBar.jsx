@@ -38,12 +38,8 @@ function BottomBar() {
         if (!el) return;
 
         const rect = el.getBoundingClientRect();
-
-        const sectionCenter =
-          rect.top + rect.height / 2;
-
-        const distance =
-          Math.abs(sectionCenter - viewportCenter);
+        const sectionCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(sectionCenter - viewportCenter);
 
         if (distance < closestDistance) {
           closestDistance = distance;
@@ -83,49 +79,113 @@ function BottomBar() {
 
   const currentSection = sections[activeIndex];
 
-  const nextSection =
-    sections[activeIndex + 1] || sections[0];
+  const isLastSection =
+    activeIndex === sections.length - 1;
+
+  const nextSection = isLastSection
+    ? null
+    : sections[activeIndex + 1];
+
+  const moveToSection = (index) => {
+    const targetSection = sections[index];
+
+    if (!targetSection) return;
+
+    document.getElementById(targetSection.id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const handlePrev = () => {
+    const prevIndex =
+      activeIndex === 0
+        ? sections.length - 1
+        : activeIndex - 1;
+
+    moveToSection(prevIndex);
+  };
+
+  const handleNext = () => {
+    if (isLastSection) return;
+
+    moveToSection(activeIndex + 1);
+  };
+
+  const handleTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
-    <div className="bottom-bar">
-      <div className="bottom-left">
-        <span
-          className={`now-viewing ${isScrolling ? "scrolling" : ""
-            }`}
-        >
-          ● NOW VIEWING
-        </span>
-
-        <strong>{currentSection.label}</strong>
-      </div>
-
-      <div className="bottom-center">
-        <button type="button">|‹</button>
-
-        <p>
-          {String(activeIndex + 1).padStart(2, "0")} /{" "}
-          {String(sections.length).padStart(2, "0")}
-        </p>
-
-        <div className="progress">
+    <>
+      <div className="bottom-bar">
+        <div className="bottom-left">
           <span
-            style={{
-              width: `${((activeIndex + 1) / sections.length) *
-                100
-                }%`,
-            }}
-          ></span>
+            className={`now-viewing ${isScrolling ? "scrolling" : ""
+              }`}
+          >
+            ● NOW VIEWING
+          </span>
+
+          <strong>{currentSection.label}</strong>
         </div>
 
-        <button type="button">›|</button>
+        <div className="bottom-center">
+          <button
+            type="button"
+            aria-label="이전 섹션"
+            onClick={handlePrev}
+          >
+            |‹
+          </button>
+
+          <div className="progress">
+            <span
+              style={{
+                width: `${((activeIndex + 1) / sections.length) * 100
+                  }%`,
+              }}
+            />
+          </div>
+
+          <button
+            type="button"
+            aria-label="다음 섹션"
+            onClick={handleNext}
+            disabled={isLastSection}
+          >
+            ›|
+          </button>
+        </div>
+
+        <div className="bottom-right">
+          <span>
+            {isLastSection
+              ? "END OF PORTFOLIO"
+              : "NEXT SECTION"}
+          </span>
+
+          <strong>
+            {isLastSection
+              ? "THANK YOU"
+              : nextSection.label}
+          </strong>
+        </div>
       </div>
 
-      <div className="bottom-right">
-        <span>NEXT SECTION</span>
-
-        <strong>{nextSection.label}</strong>
-      </div>
-    </div>
+      <button
+        className="top-btn"
+        type="button"
+        aria-label="맨 위로 이동"
+        onClick={handleTop}
+      >
+        <span>↑</span>
+        TOP
+      </button>
+    </>
   );
 }
 

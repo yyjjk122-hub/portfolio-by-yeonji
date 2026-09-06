@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { introPortalAnimation } from "../animations/introPortalAnimation";
-import "../styles/introPortal.css";
+import "../styles/IntroPortal.css";
 
 function IntroPortal({ onEnter }) {
     useEffect(() => {
@@ -13,9 +13,7 @@ function IntroPortal({ onEnter }) {
 
     return (
         <section className="intro-portal">
-            <div className="portal-flower">
-                <img src={`${import.meta.env.BASE_URL}images/flower.png`} alt="" />
-            </div>
+            <div className="portal-transition" />
 
             <button className="portal-copy" type="button">
                 <p>CLICK TO ENTER</p>

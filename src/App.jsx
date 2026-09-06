@@ -17,6 +17,30 @@ function App() {
 
   const [entered, setEntered] = useState(false);
 
+  /* =========================
+     새로고침 시 항상 최상단
+  ========================= */
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
+
+    return () => {
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "auto";
+      }
+    };
+  }, []);
+
+  /* =========================
+     INTRO SCROLL LOCK
+  ========================= */
   useEffect(() => {
     document.body.style.overflow = entered ? "" : "hidden";
 
@@ -27,7 +51,9 @@ function App() {
 
   return (
     <div className="portfolio">
-      {!entered && <IntroPortal onEnter={() => setEntered(true)} />}
+      {!entered && (
+        <IntroPortal onEnter={() => setEntered(true)} />
+      )}
 
       <div className={`global-ui ${entered ? "show" : ""}`}>
         <Sidebar />

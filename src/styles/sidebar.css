@@ -2,25 +2,35 @@
   position: fixed;
   top: 0;
   left: 0;
+
   width: 260px;
   height: 100vh;
+
   padding: 56px 48px;
+
   background: #ffebf7;
   backdrop-filter: blur(18px);
+
   border-right: 1px solid #ddd0d8;
+
   z-index: 100;
 }
 
 .sidebar-logo strong {
   display: block;
+
   margin-bottom: 20px;
+
   font-size: 20px;
 }
 
 .sidebar-logo span {
   display: block;
+
   margin-bottom: 6px;
+
   color: #555;
+
   font-size: 15px;
 }
 
@@ -30,19 +40,24 @@
 
 .side-nav p {
   margin-bottom: 36px;
+
   color: #777;
+
   font-size: 12px;
 }
 
 .side-nav li {
   margin-bottom: 44px;
+
+  color: #111;
+
   font-size: 14px;
   font-weight: 700;
-  color: #111;
 }
 
 .side-nav button {
   color: #111;
+
   font-size: 14px;
   font-weight: 700;
   text-align: left;
@@ -50,6 +65,7 @@
 
 .side-nav button span {
   margin-right: 20px;
+
   color: #f334a7;
 }
 
@@ -61,8 +77,11 @@
 
 .interface-mode span {
   display: block;
+
   margin-bottom: 8px;
+
   color: #777;
+
   font-size: 11px;
 }
 
@@ -70,16 +89,26 @@
   font-size: 13px;
 }
 
+/* 기본 상태 = 차콜 */
 .status-dot {
   display: inline-block;
+
   width: 10px;
   height: 10px;
+
   margin: 6px 0 0 3px;
 
   border-radius: 50%;
-  background: #8aaa3d;
+
+  background: #503d44;
+
+  box-shadow: none;
+  transition: none;
 }
 
+/* 스크롤 중 = 빨강 */
 .status-dot.scrolling {
-  background: #e53935;
+  background: #ff3b30;
+
+  box-shadow: none;
 }

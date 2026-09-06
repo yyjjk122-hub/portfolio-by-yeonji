@@ -2,6 +2,7 @@ function Header() {
   const moveToSection = (id) => {
     document.querySelector(id)?.scrollIntoView({
       behavior: "smooth",
+      block: "start",
     });
   };
 
@@ -10,22 +11,46 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <button onClick={() => moveToSection("#about")}>ABOUT</button>
+            <button
+              type="button"
+              onClick={() => moveToSection("#work")}
+            >
+              WEB
+            </button>
           </li>
 
           <li>
-            <button onClick={() => moveToSection("#work")}>WORKS</button>
+            <button
+              type="button"
+              onClick={() => moveToSection("#video")}
+            >
+              VIDEO
+            </button>
           </li>
 
           <li>
-            <button onClick={() => moveToSection("#design")}>DESIGN</button>
+            <button
+              type="button"
+              onClick={() => moveToSection("#design")}
+            >
+              DESIGN
+            </button>
+          </li>
+
+          <li>
+            <button
+              className="about-btn"
+              type="button"
+              aria-label="ABOUT ME로 이동"
+              onClick={() => moveToSection("#about")}
+            >
+              <span className="about-circle">
+                <span className="about-circle-inner" />
+              </span>
+            </button>
           </li>
         </ul>
       </nav>
-
-      <button className="mode-btn" type="button">
-        ○
-      </button>
     </header>
   );
 }

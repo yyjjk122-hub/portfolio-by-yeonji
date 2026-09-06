@@ -100,12 +100,13 @@ function WorkSection() {
     { icon: <FaCss3Alt />, label: "CSS" },
     { icon: <FaJs />, label: "JS" },
   ];
+
   return (
     <section id="work">
-      {/* PROJECT 01 */}
+      {/* WEB PROJECT 01-1 */}
       <section className="work-section" id="work01">
         <ProjectInfo
-          number="01"
+          number="01-1"
           title="HOME START"
           desc="처음 자취를 시작하는 사용자를 위한 반응형 라이프스타일 웹사이트입니다."
           detail="4인 팀 프로젝트로 진행했으며, 페이지 구조 설계부터 퍼블리싱, 반응형 구현, JavaScript 인터랙션 제작까지 전반적인 개발 과정에 참여했습니다. 팀원들과 기획 및 디자인 방향을 조율하고, 이를 실제 웹 화면으로 구현하며 반응형 UI와 인터랙션의 완성도를 높이는 데 기여했습니다."
@@ -137,10 +138,10 @@ function WorkSection() {
         </a>
       </section>
 
-      {/* PROJECT 02 */}
+      {/* WEB PROJECT 01-2 */}
       <section className="work-section" id="work02">
         <ProjectInfo
-          number="02"
+          number="01-2"
           title="차백도 Clone Coding"
           desc="차백도 공식 홈페이지 일부 화면을 참고해 구현한 클론코딩 프로젝트입니다."
           detail="기존 웹사이트의 레이아웃과 콘텐츠 구조를 분석한 뒤, HTML과 CSS를 중심으로 화면을 재구성했습니다. 이미지 배치, 여백, 타이포그래피 등 원본 사이트의 시각적 구성을 구현하는 데 중점을 두었으며, JavaScript를 활용해 필요한 기본 인터랙션을 적용했습니다."
